@@ -275,6 +275,150 @@ INSERT INTO roles (nombre_rol) VALUES (
 -- PERMISOS
 
 
+INSERT INTO permisos (nombre_permiso) VALUES (
+  'Crear-Usuario'
+); 
+
+
+INSERT INTO permisos (nombre_permiso) VALUES (
+  'editar-Usuario'
+); 
+
+INSERT INTO permisos (nombre_permiso) VALUES (
+  'Ver-calificaciones'
+); 
+INSERT INTO permisos (nombre_permiso) VALUES (
+  'Registrar-docente'
+); 
+INSERT INTO permisos (nombre_permiso) VALUES (
+  'Registrar-estudiante'
+); 
+INSERT INTO permisos (nombre_permiso) VALUES (
+  'Registrar-Materias'
+); 
+
+
+INSERT INTO permisos (nombre_permiso) VALUES (
+  'Registrar-calificaciones'
+); 
+
+INSERT INTO permisos (nombre_permiso) VALUES (
+  'Asignar-Materias-Docente'
+); 
+INSERT INTO permisos (nombre_permiso) VALUES (
+  'Asignar-Materias-Estudiante'
+); 
+
+
+
+
+-- roles y permisos por defecto solicitados en el problema
+
+
+
+
+-- para el admin
+INSERT INTO rolesPermisos (id_rol,id_permiso) VALUES (
+  '1',
+  '1'
+); 
+
+
+
+
+INSERT INTO rolesPermisos (id_rol,id_permiso) VALUES (
+  '1',
+  '2'
+); 
+
+
+INSERT INTO rolesPermisos (id_rol,id_permiso) VALUES (
+  '1',
+  '3'
+); 
+
+
+-- para el secretario 
+
+INSERT INTO rolesPermisos (id_rol,id_permiso) VALUES (
+  '2',
+  '4'
+); 
+
+INSERT INTO rolesPermisos (id_rol,id_permiso) VALUES (
+  '2',
+  '5'
+); 
+
+
+
+INSERT INTO rolesPermisos (id_rol,id_permiso) VALUES (
+  '2',
+  '6'
+); 
+
+
+
+INSERT INTO rolesPermisos (id_rol,id_permiso) VALUES (
+  '2',
+  '8'
+); 
+
+
+INSERT INTO rolesPermisos (id_rol,id_permiso) VALUES (
+  '2',
+  '9'
+); 
+
+
+
+INSERT INTO rolesPermisos (id_rol,id_permiso) VALUES (
+  '2',
+  '3'
+); 
+
+
+
+
+INSERT INTO rolesPermisos (id_rol,id_permiso) VALUES (
+  '2',
+  '1'
+); 
+
+
+
+INSERT INTO rolesPermisos (id_rol,id_permiso) VALUES (
+  '2',
+  '2'
+); 
+
+
+
+-- docente
+
+
+
+INSERT INTO rolesPermisos (id_rol,id_permiso) VALUES (
+  '3',
+  '7'
+); 
+
+
+
+INSERT INTO rolesPermisos (id_rol,id_permiso) VALUES (
+  '3',
+  '3'
+); 
+
+
+-- estudiante 
+
+INSERT INTO rolesPermisos (id_rol,id_permiso) VALUES (
+  '4',
+  '3'
+); 
+
+
 
 
 
