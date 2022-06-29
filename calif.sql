@@ -203,7 +203,30 @@ create table matricula(
   
   )
   
+  -- calificaciones
+
+
+  create table calif(
+  id int PRIMARY key identity(1,1),
   
+  PrimerParcial decimal(4,2) not null check (PrimerParcial >=0),
+  SegundoParcial decimal(4,2) not null check (SegundoParcial >=0),
+  
+  totalCalif AS PrimerParcial + SegundoParcial, --define el campo calculado del total de la calificacione
+  
+  iddocente int not null,
+  idestudiante int not null,
+  idMateria int not null,
+  
+  
+  FOREIGN key (idMateria) references materia(id),
+  FOREIGN key (iddocente) references docente(id),
+  FOREIGN key (idestudiante) references estudiante(id),
+   
+  
+  
+  
+  )
 
 
 
