@@ -209,8 +209,8 @@ create table matricula(
   create table calif(
   id int PRIMARY key identity(1,1),
   
-  PrimerParcial decimal(4,2) not null check (PrimerParcial >=0),
-  SegundoParcial decimal(4,2) not null check (SegundoParcial >=0),
+  PrimerParcial decimal(4,2) not null check (PrimerParcial >=0 AND PrimerParcial <=50),
+  SegundoParcial decimal(4,2) not null check (SegundoParcial >=0 AND SegundoParcial <=50),
   
   totalCalif AS PrimerParcial + SegundoParcial, --define el campo calculado del total de la calificacione
   
@@ -229,6 +229,77 @@ create table matricula(
   )
 
 
+-- agregar los constraints 
+
+ Alter table telefono
+  	add CONSTRAINT ck_telefono CHECK (numeroTelefono LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
+  
+  alter TABLE estudiante
+  	add CONSTRAINT ck_carnet CHECK (carnet LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
+
+  /*
+  	tabla telefono al Numtelefono 
+    tablar estudiante al carnet
+  
+  
+  */
+  
+  
+  -- rellenar roles y permisos
+
+-- admin
+
+INSERT INTO roles (nombre_rol) VALUES (
+  'Administrador'
+); 
+
+-- Secretario Academico
+
+INSERT INTO roles (nombre_rol) VALUES (
+  'Secretario academico'
+); 
+
+-- docente
+
+INSERT INTO roles (nombre_rol) VALUES (
+  'Docente'
+); 
+
+-- Estudiante
+
+INSERT INTO roles (nombre_rol) VALUES (
+  'Estudiante'
+); 
+
+
+-- PERMISOS
+
+
+
+
+
+  /*
+  	Admin 
+    	- crea ususarios 
+        - editar usuario 
+        -ver reporte calificaciones
+    Secretario academico
+    	-Registra Docentes 
+        - registra estudiantes 
+        - Refistra Materias 
+        - Asigna docentes y estudiantes a materias 
+        - Ve reportes de calificaciones 
+        - Crea usuario y edita 
+    
+    Docente
+    	- Registra Calificaciones
+        - Puede ver calificaciones 
+        
+    Estudiante 
+  		- - Puede ver calificaciones 
+  
+  
+  */
 
 
 
