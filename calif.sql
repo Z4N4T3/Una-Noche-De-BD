@@ -105,3 +105,54 @@ CREATE table empleado(
   
   
   )
+
+-- docente y materias
+
+create TABLE docente(
+  id int PRIMARY key identity(1,1),
+  
+  idEmpleado int not null,
+  usuarioReg int not null, -- lave foranea de la tabla usuario
+
+  FOREIGN key (idEmpleado) references empleado(id),
+  FOREIGN key (usuarioReg) references usuario(id),
+  
+  )
+  
+  
+create table materia(
+  id int PRIMARY key identity(1,1),
+  
+  NombreMateria varchar(100) not null unique,
+  
+  fecha_registro DATETIME not null default GETDATE(),
+
+  usuarioReg int not null, -- lave foranea de la tabla usuario
+  
+  FOREIGN key (usuarioReg) references usuario(id)
+  
+  )
+ 
+ create table docenteMateria(
+   
+   id int PRIMARY key identity(1,1),
+   
+   idDocente int not null,
+   idMateria int not null,
+   
+   FOREIGN key (idDocente) references docente(id),
+   
+   FOREIGN key (idMateria) references materia(id)
+   
+   
+   )
+  
+
+
+
+
+
+
+
+
+
