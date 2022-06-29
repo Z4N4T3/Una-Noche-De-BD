@@ -146,6 +146,63 @@ create table materia(
    
    
    )
+-- estudiante grado matricula
+
+
+create table grado(
+  id int PRIMARY key identity(1,1),
+  NumGrado int not null,
+
+  )
+  
+create table gradoMateria(
+  id int PRIMARY key identity(1,1),
+  
+  idGrado int not null,
+  idMateria int not null,
+  
+  
+  FOREIGN key (idGrado) references grado(id),
+  FOREIGN key (idMateria) references materia(id),
+  
+  
+  
+  )
+  
+  
+create TABLE estudiante (
+  id int PRIMARY key identity(1,1),
+  
+  carnet varchar(8) not null unique,
+  
+  idDatos int not null,
+  usuarioreg int not null,
+  idGrado int not null,
+  
+  fecha_registro DATETIME not null DEFAULT GETDATE(),
+  FOREIGN key (idDatos) references DatosPersonales(id),
+  FOREIGN key (idGrado) references grado(id),
+  FOREIGN key (usuarioreg) references usuario(id),
+  
+  
+  )
+  
+  
+create table matricula(
+  id int PRIMARY key identity(1,1),
+  
+  carnet varchar(8) not null unique,
+  
+  idMateria int not null,
+  idEstudiante int not null,
+  
+  FOREIGN key (idMateria) references materia(id),
+  FOREIGN key (idEstudiante) references estudiante(id),
+  
+  
+  
+  )
+  
   
 
 
